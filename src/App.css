@@ -1,0 +1,4 @@
+nav a.is-active{
+    pointer-events: none;
+    font-weight: bold;
+}

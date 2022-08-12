@@ -1,7 +1,9 @@
 import { Route, Routes, Link, useParams, Outlet} from 'react-router-dom';
+import { NavLink } from './components/NavLink';
 import './App.css';
 
 const Home = () => <h1>Home</h1>
+
 const SearchPage = () => {
   const hamburguesas = [
     'Teriyaki',
@@ -27,7 +29,7 @@ const SearchPage = () => {
 const Hamburguers = () => {
   const { nameHamburguer } = useParams();
   return (
-    <div>
+    <div> 
       <h1>Hamburguesa {nameHamburguer}</h1>
       <Link to='details' >Ir al detalle</Link>
       <Outlet/>
@@ -52,8 +54,12 @@ function App() {
         <h1>Ecommerce</h1>
         <nav>
           <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/search-page'>Search Page</Link></li>
+            <li>
+              <NavLink to='/'>Home</NavLink>
+              </li>
+            <li>
+              <NavLink to='/search-page'>Search Page</NavLink>
+              </li>
           </ul>
         </nav>  
       </header>
